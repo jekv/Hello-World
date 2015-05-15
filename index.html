@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div class="item">
-				<img src="http://dota2walls.com/wp-content/uploads/2014/10/pudge-chains-of-the-black-death-wallpaper.png" class="img-responsive">
+				<img src="" class="img-responsive">
 			</div>
 		</div>		
 	</div>
@@ -74,7 +74,7 @@
 									<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 									<i class="fa fa-arrow-right gar"></i>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-3" id = "caffe">
 									<img src="images/final/caffe-logo.gif" alt="" class="img-responsive">
 									<h3>Caffe</h3>
 									<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -86,29 +86,42 @@
 				</div>
 			</div>
 
-				<div id="midComponentNdx" class = "wrapper">
+				<div id="midComponentNdx" class="wrapper">
 					<div class="container">
 						<h1>What on the Menu</h1>
-						<a href=""><i class="fa fa-arrow-left slidePrev"></i></a>
-						<ul class="bx-slider">
-							<li>
-								<img src="images/final/menu-food1.gif" class = "img-responsive firstF">
-								<figcaption class="caption"><h3>KFC's SNACK BOX?</h3><p class="descrpt">Whoa! Now I'm craving for one.</p><div class="vwbtn">View Now</div></figcaption>
-							</li>
-							<li>
-								<img src="images/final/menu-food1.gif" class = "img-responsive">
-								<figcaption class="caption"><h3>Chicken Ala Wrap</h3><p class="descrpt">A classic savory chicken with tomato sauce and rice. It's better to eat this while hot.</p><div class="vwbtn">View Now</div></figcaption>
-							</li>
-							<li>
-								<img src="images/final/menu-food3.gif" class = "img-responsive">
-								<figcaption class="caption"><h3>A Very Yummy Food?</h3><p class="descrpt">A good, small, perhaps expensive looking food which has a stem for, perhaps, toothpicking? </p><div class="vwbtn">View Now</div></figcaption>
-							</li>
-						</ul>
-						<a href=""><i class="fa fa-arrow-right slideNxt"></i></a>
-						<div class="slidercircs"><a href="" class="active"><i class="fa fa-circle"></a></i><a href=""><i class="fa fa-circle"></a></i><a href=""><i class="fa fa-circle"></i></a></div>
-					</div>
-
+					<section class="slider">
+						<div class="flexslider carousel">
+							<ul class="slides">
+								<li>
+									<img src="images/final/menu-food1.gif" class = "img-responsive firstF">
+									<figcaption class="caption"><h3>KFC's SNACK BOX?</h3><p class="descrpt">Whoa! Now I'm craving for one.</p><div class="vwbtn">View Now</div></figcaption>
+								</img>
+								</li>
+								<li>
+									<img src="images/final/menu-food1.gif" class = "img-responsive">
+									<figcaption class="caption"><h3>Chicken Ala Wrap</h3><p class="descrpt">A classic savory chicken with tomato sauce and rice. It's better to eat this while hot.</p><div class="vwbtn">View Now</div></figcaption>
+								</li>
+								<li>
+									<img src="images/final/menu-food3.gif" class = "img-responsive">
+									<figcaption class="caption"><h3>A Very Yummy Food?</h3><p class="descrpt">A good, small, perhaps expensive looking food which has a stem for, perhaps, toothpicking? </p><div class="vwbtn">View Now</div></figcaption>
+								</li>
+								<li>
+									<img src="images/final/menu-food1.gif" class = "img-responsive firstF">
+									<figcaption class="caption"><h3>KFC's SNACK BOX?</h3><p class="descrpt">Whoa! Now I'm craving for one.</p><div class="vwbtn">View Now</div></figcaption>
+								</li>
+								<li>
+									<img src="images/final/menu-food1.gif" class = "img-responsive">
+									<figcaption class="caption"><h3>Chicken Ala Wrap</h3><p class="descrpt">A classic savory chicken with tomato sauce and rice. It's better to eat this while hot.</p><div class="vwbtn">View Now</div></figcaption>
+								</li>
+								<li>
+									<img src="images/final/menu-food3.gif" class = "img-responsive">
+									<figcaption class="caption"><h3>A Very Yummy Food?</h3><p class="descrpt">A good, small, perhaps expensive looking food which has a stem for, perhaps, toothpicking? </p><div class="vwbtn">View Now</div></figcaption>
+								</li>
+							</ul>
+						</div>
+					</section>
 				</div>
+			</div>
 
 			<div id="midComponent2Ndx">
 					<div id="cc" class="carousel slide">
@@ -281,5 +294,55 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script defer src="jquery.flexslider.js"></script>
+    <script type="text/javascript">
+
+    (function() {
+
+      // store the slider in a local variable
+      var $window = $(window),
+          flexslider;
+
+      // tiny helper function to add breakpoints
+      function getGridSize() {
+        return (window.innerWidth < 600) ? 1 :
+               (window.innerWidth < 1000) ? 2 : 3;
+               //(window.innerWidth < )
+      }
+
+      $(function() {
+        SyntaxHighlighter.all();
+      });
+
+      $window.load(function() {
+        $('.flexslider').flexslider({
+          animation: "slide",
+          animationSpeed: 400,
+          animationLoop: false,
+          itemWidth: 210,
+          itemMargin: 5,
+          minItems: getGridSize(), // use function to pull in initial value
+          maxItems: getGridSize(), // use function to pull in initial value
+          start: function(slider){
+            $('body').removeClass('loading');
+            flexslider = slider;
+          }
+        });
+      });
+
+      // check grid size on resize event
+      $window.resize(function() {
+        var gridSize = getGridSize();
+
+        flexslider.vars.minItems = gridSize;
+        flexslider.vars.maxItems = gridSize;
+      });
+    }());
+
+  </script>
+	<script type="text/javascript" src="js/shCore.js"></script>
+  <script type="text/javascript" src="js/shBrushXml.js"></script>
+  <script type="text/javascript" src="js/shBrushJScript.js"></script>
+  
 </body>
 </html>
